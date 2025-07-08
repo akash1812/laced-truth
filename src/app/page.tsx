@@ -1,5 +1,6 @@
-
 import Image from "next/image"
+import CoolButton from "@/components/CoolButton"
+
 export default function Home(){
   return(
     <div>
@@ -11,9 +12,9 @@ export default function Home(){
         alt="shoe"
         />
       </div>
+      <div className="flex items-center justify-center mt-2"><CoolButton children="Get Started"/></div>
       <div className="flex items-center justify-center">Get help from the community</div>
       <div>
-        
       </div>
     </div>
     
