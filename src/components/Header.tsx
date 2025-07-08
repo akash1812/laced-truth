@@ -17,6 +17,7 @@ const minecraftFont = localFont({
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const toggleNavBar = () => setIsOpen(!isOpen)
+  const [userButton, setUserButton] = useState(false);
 
   return (
     <header>
@@ -25,7 +26,7 @@ export default function Header() {
 
         <div className="hidden md:flex absolute right-0 space-x-4 mr-4 items-center">
           <a href="/what" className="text-gray-400 hover:text-gray-200">What's this?</a>
-          <a href="/about" className="text-gray-400 hover:text-gray-200">About</a>
+          <a href="/about" className="text-gray-400 hover:text-gray-200">About Us</a>
           
           <SignedOut>
             <SignInButton>
@@ -37,14 +38,15 @@ export default function Header() {
               
             </SignUpButton>
           </SignedOut>
-
-          <SignedIn >
-            <UserButton showName appearance={{
+          <div className="text-white bg-white">
+            <SignedIn>
+            <UserButton  showName appearance={{
               variables:{
-                colorText: 'white'
+                colorText: ''
               }
             }}/>
           </SignedIn>
+          </div>
         </div>
 
         <div className="md:hidden">
@@ -56,7 +58,7 @@ export default function Header() {
         {isOpen && (
           <div className="md:hidden w-48 p-4 rounded-lg shadow-lg absolute right-2 top-12 bg-black">
             <a href="/what" className="block mb-2 hover:text-gray-200">What's this?</a>
-            <a href="/about" className="block mb-2 hover:text-gray-200">About</a>
+            <a href="/about" className="block mb-2 hover:text-gray-200">About Us</a>
             <SignedOut>
               <SignInButton><a className="block mb-2 hover:text-gray-200 hover:cursor-pointer">Login</a></SignInButton>
               <SignUpButton><a className="block mb-2 hover:text-gray-200 hover:cursor-pointer">Register</a></SignUpButton>
@@ -65,7 +67,7 @@ export default function Header() {
             <SignedIn>
               <UserButton showName appearance={{
               variables:{
-                colorText: 'white'
+                colorText: ''
               }
             }}/>
             </SignedIn>
