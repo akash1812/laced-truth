@@ -1,7 +1,10 @@
+'use client'
 import * as motion from "motion/react-client"
+import { useRouter } from "next/navigation"
 
 
 export function CoolButton({children}:{children: React.ReactNode}){
+  const router = useRouter();
   return(
     <div className=""
     style={{
@@ -11,6 +14,8 @@ export function CoolButton({children}:{children: React.ReactNode}){
     }}>
 
       <motion.button
+      onClick={() => router.push("/shoepremecourt")}
+
       whileHover={{
         rotateX: 0,
         rotateY: 0,
